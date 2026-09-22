@@ -28,8 +28,14 @@
     <a href="<?= site_url('admin/pengaduan') ?>" class="nav-link <?= ($active ?? '') === 'pengaduan' ? 'active' : '' ?>">
       <i class="bi bi-file-earmark-text"></i> List Pengaduan
     </a>
+    <a href="<?= site_url('admin/kategori') ?>" class="nav-link <?= ($active ?? '') === 'kategori' ? 'active' : '' ?>">
+      <i class="bi bi-folder2-open"></i> Kategori
+    </a>
     <a href="<?= site_url('admin/topik') ?>" class="nav-link <?= ($active ?? '') === 'topik' ? 'active' : '' ?>">
-      <i class="bi bi-diagram-3"></i> Topik & PIC
+      <i class="bi bi-tags"></i> Topik
+    </a>
+    <a href="<?= site_url('admin/topik-pic') ?>" class="nav-link <?= ($active ?? '') === 'topik-pic' ? 'active' : '' ?>">
+      <i class="bi bi-diagram-3"></i> Penugasan PIC
     </a>
 
     <div class="nav-section-label">Manajemen Akun</div>
@@ -87,7 +93,6 @@
 <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap5.min.js"></script>
 <script>
-  // Default DataTables ID (Bahasa Indonesia) dipakai semua tabel admin.
   const DATATABLE_ID_LANG = {
     search: 'Cari:',
     lengthMenu: 'Tampilkan _MENU_ data',

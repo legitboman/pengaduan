@@ -53,9 +53,27 @@ $routes->group('admin', ['filter' => 'adminAuth'], static function (RouteCollect
         $routes->post('delete/(:num)', 'Admin\Pengaduan::delete/$1');
     });
 
+    $routes->group('kategori', static function (RouteCollection $routes) {
+        $routes->get('/', 'Admin\Kategori::index');
+        $routes->get('create', 'Admin\Kategori::create');
+        $routes->post('store', 'Admin\Kategori::store');
+        $routes->get('edit/(:num)', 'Admin\Kategori::edit/$1');
+        $routes->post('update/(:num)', 'Admin\Kategori::update/$1');
+        $routes->post('delete/(:num)', 'Admin\Kategori::delete/$1');
+    });
+
     $routes->group('topik', static function (RouteCollection $routes) {
         $routes->get('/', 'Admin\Topik::index');
-        $routes->post('update-pic/(:num)', 'Admin\Topik::updatePic/$1');
+        $routes->get('create', 'Admin\Topik::create');
+        $routes->post('store', 'Admin\Topik::store');
+        $routes->get('edit/(:num)', 'Admin\Topik::edit/$1');
+        $routes->post('update/(:num)', 'Admin\Topik::update/$1');
+        $routes->post('delete/(:num)', 'Admin\Topik::delete/$1');
+    });
+
+    $routes->group('topik-pic', static function (RouteCollection $routes) {
+        $routes->get('/', 'Admin\TopikPic::index');
+        $routes->post('update/(:num)', 'Admin\TopikPic::update/$1');
     });
 
     $routes->group('masyarakat', static function (RouteCollection $routes) {
